@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		A2B43CD71DC1ABA3008DDEDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B43CD61DC1ABA3008DDEDB /* AppDelegate.swift */; };
-		A2B43CD91DC1ABA3008DDEDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B43CD81DC1ABA3008DDEDB /* ViewController.swift */; };
 		A2B43CDC1DC1ABA3008DDEDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B43CDA1DC1ABA3008DDEDB /* Main.storyboard */; };
 		A2B43CDE1DC1ABA3008DDEDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2B43CDD1DC1ABA3008DDEDB /* Assets.xcassets */; };
 		A2B43CE11DC1ABA3008DDEDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B43CDF1DC1ABA3008DDEDB /* LaunchScreen.storyboard */; };
 		A2B43CEC1DC1ABA3008DDEDB /* Weather_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B43CEB1DC1ABA3008DDEDB /* Weather_appTests.swift */; };
 		A2B43CF71DC1ABA3008DDEDB /* Weather_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B43CF61DC1ABA3008DDEDB /* Weather_appUITests.swift */; };
+		A2B43D061DC1B43E008DDEDB /* JsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B43D051DC1B43E008DDEDB /* JsonModel.swift */; };
+		A2B43D541DC2A513008DDEDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B43D531DC2A513008DDEDB /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		A2B43CD31DC1ABA3008DDEDB /* Weather app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B43CD61DC1ABA3008DDEDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A2B43CD81DC1ABA3008DDEDB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A2B43CDB1DC1ABA3008DDEDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A2B43CDD1DC1ABA3008DDEDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2B43CE01DC1ABA3008DDEDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +47,8 @@
 		A2B43CF21DC1ABA3008DDEDB /* Weather appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Weather appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2B43CF61DC1ABA3008DDEDB /* Weather_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather_appUITests.swift; sourceTree = "<group>"; };
 		A2B43CF81DC1ABA3008DDEDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2B43D051DC1B43E008DDEDB /* JsonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonModel.swift; path = DataModel/JsonModel.swift; sourceTree = "<group>"; };
+		A2B43D531DC2A513008DDEDB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +99,9 @@
 		A2B43CD51DC1ABA3008DDEDB /* Weather app */ = {
 			isa = PBXGroup;
 			children = (
-				A2B43CD61DC1ABA3008DDEDB /* AppDelegate.swift */,
-				A2B43CD81DC1ABA3008DDEDB /* ViewController.swift */,
-				A2B43CDA1DC1ABA3008DDEDB /* Main.storyboard */,
-				A2B43CDD1DC1ABA3008DDEDB /* Assets.xcassets */,
-				A2B43CDF1DC1ABA3008DDEDB /* LaunchScreen.storyboard */,
+				A2B43D561DC2B4AE008DDEDB /* Main */,
+				A2B43D551DC2B480008DDEDB /* ViewControllers */,
+				A2B43D041DC1B3F2008DDEDB /* DataModel */,
 				A2B43CE21DC1ABA3008DDEDB /* Info.plist */,
 			);
 			path = "Weather app";
@@ -123,6 +123,33 @@
 				A2B43CF81DC1ABA3008DDEDB /* Info.plist */,
 			);
 			path = "Weather appUITests";
+			sourceTree = "<group>";
+		};
+		A2B43D041DC1B3F2008DDEDB /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				A2B43D051DC1B43E008DDEDB /* JsonModel.swift */,
+			);
+			name = DataModel;
+			sourceTree = "<group>";
+		};
+		A2B43D551DC2B480008DDEDB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A2B43D531DC2A513008DDEDB /* ViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A2B43D561DC2B4AE008DDEDB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A2B43CDD1DC1ABA3008DDEDB /* Assets.xcassets */,
+				A2B43CDF1DC1ABA3008DDEDB /* LaunchScreen.storyboard */,
+				A2B43CDA1DC1ABA3008DDEDB /* Main.storyboard */,
+				A2B43CD61DC1ABA3008DDEDB /* AppDelegate.swift */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +286,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2B43CD91DC1ABA3008DDEDB /* ViewController.swift in Sources */,
+				A2B43D061DC1B43E008DDEDB /* JsonModel.swift in Sources */,
+				A2B43D541DC2A513008DDEDB /* ViewController.swift in Sources */,
 				A2B43CD71DC1ABA3008DDEDB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
