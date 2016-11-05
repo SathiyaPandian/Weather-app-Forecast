@@ -16,7 +16,7 @@ class ViewController: UIViewController,  UISearchBarDelegate,UITableViewDelegate
     
     let defaults = UserDefaults.standard
     @IBOutlet weak var tableView: UITableView!
-   
+    var objects = [Repository]()
     var searchActive : Bool = false
     let searchController = UISearchController(searchResultsController: nil)
     override func viewDidLoad() {
@@ -55,16 +55,41 @@ class ViewController: UIViewController,  UISearchBarDelegate,UITableViewDelegate
             else {
                 // Case 2: Success
                 // We got a response from the server!
-                print("Data:\n\(data!)")
+              //  print("Data:\n\(data!)")
                 let dataString = String(data: data!, encoding: String.Encoding.utf8)
-                print("Human-readable data:\n\(dataString!)")// just  printing to make sure the value is received.
+                //print("Human-readable data:\n\(dataString!)")// just  printing to make sure the value is received.
                 // Due to time constraint the Object mapping for JSON results are not done.
-                
+                 self.extract_json_data(data: data! as NSData)
             }
         }
         
         // The data task is set up...launch it!
         dataTask.resume()
+    }
+    
+    func extract_json_data(data:NSData)
+    {
+        var json: AnyObject?
+        
+        
+        do
+        {
+            json = try JSONSerialization.jsonObject(with: data as Data, options: []) as? NSDictionary
+             if let reposArray = json?["coord"] as? [NSDictionary] {
+            for coord in reposArray
+            {
+                // colors.append(Color(data: data_array[i] as! NSDictionary))
+                self.objects.append(Repository(json: reposArray[coord as! Int] ))
+            }
+            }
+            
+            print("Error:\n\(self.objects.count)")
+        }
+        catch
+        {
+            return
+        }
+        
     }
     
         
